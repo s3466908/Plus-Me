@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// home return welcome.blade.php
+Route::get('/', 'PagesController@index' );
+
+//if /about return folder pages file about.blade.php file
+Route::get('/about', function () {
+    return view('pages.about');
 });
+
+Route::get('/about', function () {
+    return view('pages.about');
+});
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
