@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// home return welcome.blade.php
+Route::get('/', 'PagesController@index' );
+
+//if /about return folder pages file about.blade.php file
+//Route::get('/about', function () {
+//    return view('pages.about');
+//});
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/about', 'PagesController@about')->name('about');
+
+Route::get('/faq', 'PagesController@faq')->name('faq');
+
+Route::get('/policy', 'PagesController@policy')->name('policy');
+
+

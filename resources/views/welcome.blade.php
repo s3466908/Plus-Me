@@ -46,7 +46,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 72px;
             }
 
             .links > a {
@@ -61,11 +61,29 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                margin-top: 30px;
             }
+
+            .button {
+                background-color: #ddd;
+                border: none;
+                color: black;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 16px;
+                font-family: Century Gothic;
+            }
+
+
+
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -79,16 +97,47 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Plus Me
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="form-group row">
+                    <div class="col-sm-9">
+                        <div class="pickup-location-same">
+                            <label>Pickup Location</label>
+                            <input type="hidden" value="" />
+                            <input class="form-control ondemand-typeahead" type="text" placeholder="Search by suburb, postcode, city, region..." data-provide="typeahead" autocomplete="on" value="" name="location" style="padding: 10px; margin: 10px; width: 500px;" />
+                            <button type="button" class="button" >Locate me</button>
+                        </div>
+                    </div>
+                <br>
+                    <div class="col-sm-4">
+                        <div class="pickup-date-same">
+                            <label>Pickup Date</label>
+                            <input type="hidden" value="" />
+                            <input class="form-control ondemand-typeahead" type="date"  data-provide="typeahead" autocomplete="on" value="" name="pickupdate" style="padding: 10px; margin: 10px; width: 300px;" />
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="return-date-same">
+                            <label>Return Date</label>
+                            <input type="hidden" value="" />
+                            <input class="form-control ondemand-typeahead" type="date" data-provide="typeahead" autocomplete="on" value="" name="returndate" style="padding: 10px; margin: 10px; width: 300px;" />
+                        </div>
+                    </div>
+                    <br>
+                    <button type="button" class="button" >Search</button>
                 </div>
+                <br />
+                <div>
+                    <img src="./images/mapwillbereplaced.PNG" class="img-Map" alt="Google Maps" width="80%" >
+                </div>
+
+                <div>
+
+                </div>
+
+                @include('layouts.partials.footer')
             </div>
         </div>
     </body>
