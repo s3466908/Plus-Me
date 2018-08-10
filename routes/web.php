@@ -11,7 +11,7 @@
 |
 */
 
-//  if home return welcome.blade.php though PagesController 
+//  if home return welcome.blade.php though PagesController
 // using public function -> index
 Route::get('/', 'PagesController@index' );
 
@@ -23,3 +23,11 @@ Route::get('/about', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/about', 'PagesController@about')->name('about');
+
+Route::get('/faq', 'PagesController@faq')->name('faq');
+
+Route::get('/policy', 'PagesController@policy')->name('policy');
+
+
