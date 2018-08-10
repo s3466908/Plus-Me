@@ -9,17 +9,20 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        {!! $map['js']!!}
 
         <!-- Styles -->
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
+            body {
                 margin: 0;
+                padding: 0;
+                background-color: #fff;
+                font-family: "Lucida Grande", "Helvetica Neue", Roboto, "Droid Sans", Prelude, Helvetica, Arial, sans-serif;
+                font-size: 100%;
+                color: #334;
+	            text-align:center;
             }
+<<<<<<< HEAD
 
             .full-height {
                 height: 100vh;
@@ -62,6 +65,16 @@
             .m-b-md {
                 margin-bottom: 30px;
                 margin-top: 30px;
+=======
+            #frame {
+	            padding-left:20%;
+	            padding-Right:20%;
+            }
+
+            #googleMap {
+	            width:100%;
+	            height:400px;
+>>>>>>> first_release
             }
 
             .button {
@@ -83,6 +96,7 @@
         </style>
     </head>
     <body>
+<<<<<<< HEAD
         <div class="flex-center">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -139,6 +153,16 @@
 
                 @include('layouts.partials.footer')
             </div>
+=======
+    <h2>Welcome To!</h2>
+        <h1>Plus Me Car Sharing </h1>
+		<p>Google Maps API</p>
+        <div id="frame">
+		<div id="googleMap" >
+        {!! $map['html']!!}
+>>>>>>> first_release
         </div>
+		</div>
+        
     </body>
 </html>
