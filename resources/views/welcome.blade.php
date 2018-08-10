@@ -22,6 +22,7 @@
                 color: #334;
 	            text-align:center;
             }
+<<<<<<< HEAD
 
             .full-height {
                 height: 100vh;
@@ -64,6 +65,7 @@
             .m-b-md {
                 margin-bottom: 30px;
                 margin-top: 30px;
+=======
             #frame {
 	            padding-left:20%;
 	            padding-Right:20%;
@@ -72,6 +74,7 @@
             #googleMap {
 	            width:100%;
 	            height:400px;
+>>>>>>> first_release
             }
 
             .button {
@@ -93,6 +96,7 @@
         </style>
     </head>
     <body>
+<<<<<<< HEAD
         <div class="flex-center">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -149,12 +153,14 @@
 
                 @include('layouts.partials.footer')
             </div>
+=======
     <h2>Welcome To!</h2>
         <h1>Plus Me Car Sharing </h1>
 		<p>Google Maps API</p>
         <div id="frame">
 		<div id="googleMap" >
         {!! $map['html']!!}
+>>>>>>> first_release
         </div>
 		</div>
         
