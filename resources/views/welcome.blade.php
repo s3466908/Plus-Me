@@ -1,16 +1,13 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}"> 
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
+        <title>Plus Me</title>
+        <!-- Fonts -->  
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         {!! $map['js']!!}
-
         <!-- Styles -->
         <style>
             body {
@@ -22,7 +19,6 @@
                 color: #334;
 	            text-align:center;
             }
-
 
             .full-height {
                 height: 100vh;
@@ -90,30 +86,15 @@
                 border-radius: 16px;
                 font-family: Century Gothic;
             }
-
-
-
         </style>
     </head>
+    @extends('layouts.partials.nav')
     <body>
-
-        <div class="flex-center">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register!!</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Plus Me
-                </div>
-
+    
+        <div class="content">
+            <div class="title m-b-md">
+                Plus Me
+            </div>
                 <div class="form-group row">
                     <div class="col-sm-9">
                         <div class="pickup-location-same">
@@ -143,26 +124,13 @@
                     <button type="button" class="button" >Search</button>
                 </div>
                 <br />
-                <div>
-                    <img src="./images/mapwillbereplaced.PNG" class="img-Map" alt="Google Maps" width="80%" >
-                </div>
-
-                <div>
-
-                </div>
-
+                    <div id="frame">
+		                <div id="googleMap" >
+                          {!! $map['html']!!}
+                         </div>
+		            </div>      
                 @include('layouts.partials.footer')
-            </div>
-
-    <h2>Welcome To!</h2>
-        <h1>Plus Me Car Sharing </h1>
-		<p>Google Maps API</p>
-        <div id="frame">
-		<div id="googleMap" >
-        {!! $map['html']!!}
-
-        </div>
-		</div>
-        
+            </div>       
     </body>
+
 </html>

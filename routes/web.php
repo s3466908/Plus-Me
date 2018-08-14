@@ -11,10 +11,11 @@
 |
 */
 
+//HUH? google map route...
 Route::get('/', function () {
     $config['center'] = 'RMIT, Australia';
     $config['zoom'] = '18';
-    $config['map_height'] = '500px';
+    $config['map_height'] = '1000px';
     //$config['map_width'] = '500px';
     $config['scrollwheel'] = false;
 
@@ -32,12 +33,12 @@ Route::get('/', function () {
     return view('welcome')->with('map',$map);
 });
 
+//Authentication Routes 
+Route::get('/user/activate/{token}', 'Auth\RegisterController@activateUser');
 Auth::routes();
 
+//Page Routes 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/about', 'PagesController@about')->name('about');
-
 Route::get('/faq', 'PagesController@faq')->name('faq');
-
 Route::get('/policy', 'PagesController@policy')->name('policy');
