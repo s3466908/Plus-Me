@@ -105,7 +105,7 @@
                         </div>
                         <!-- Terms and Condition Checkbox -->
                         <div class="form-group row">
-                            <label for="terms" class="col-md-4 col-form-label text-md-right"> {{ __('I agree to the termns of service') }}</label>
+                            <label for="terms" class="col-md-4 col-form-label text-md-right"> {{ __('I agree to the terms of service') }}</label>
                                 
                             <div class="col-md-2"> 
                                 <input type="checkbox" class="form-control" name="terms" value="1" class="form-control{{ $errors->has('terms') ? ' has-error' : '' }}" value="{{ old('terms') }}" />
