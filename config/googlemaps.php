@@ -11,6 +11,7 @@ return [
     /* =====================================================================
     General
     ===================================================================== */
+    // google maps api key listed below as 'AIzaSyDQMzhiINq0pfDHofIycq6m_V2dRFULbPc'
     'key' => env('GOOGLE_MAPS_API_KEY', 'AIzaSyDQMzhiINq0pfDHofIycq6m_V2dRFULbPc'), //Get API key: https://code.google.com/apis/console
     'adsense_publisher_id' => env('GOOGLE_ADSENSE_PUBLISHER_ID', ''), //Google AdSense publisher ID
 

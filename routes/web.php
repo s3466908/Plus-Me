@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/map', 'MapController@index');
 
 Route::get('/', function () {
     $config['center'] = 'RMIT, Australia';
@@ -18,6 +19,7 @@ Route::get('/', function () {
     //$config['map_width'] = '500px';
     $config['scrollwheel'] = false;
 
+    // initialize maps using these configs above
     GMaps::initialize($config);
     
     // Add Marker
@@ -27,8 +29,13 @@ Route::get('/', function () {
     $marker['icon'] ='http://maps.google.com/mapfiles/kml/paddle/blu-circle.png';
     Gmaps::add_marker($marker);
 
+    // creating map using $map variable so its accessible anywhere
     $map = GMaps::create_map();
 
+    
+
+
+    // passing the map to the view
     return view('welcome')->with('map',$map);
 });
 

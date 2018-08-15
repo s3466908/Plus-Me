@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <!-- javascripting key need this on the page you are laying the map on -->
         {!! $map['js']!!}
 
         <!-- Styles -->
@@ -159,6 +160,8 @@
 		<p>Google Maps API</p>
         <div id="frame">
 		<div id="googleMap" >
+        
+        <!-- nee this html key on the page for loading the maps-->
         {!! $map['html']!!}
 
         </div>
