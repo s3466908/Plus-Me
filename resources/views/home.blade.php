@@ -1,5 +1,8 @@
 @extends('layouts.app')
-
+<head>
+<!-- javascript for google map -->
+        {!! $map['js'] !!}
+</head>
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -13,11 +16,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     This is the Dashboard
                 </div>
             </div>
+		    </div>  
         </div>
+        <!-- display the google map -->
+        {!! $map['html'] !!}
     </div>
 </div>
 @endsection

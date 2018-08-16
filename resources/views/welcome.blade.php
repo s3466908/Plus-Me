@@ -7,7 +7,6 @@
         <title>Plus Me</title>
         <!-- Fonts -->  
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        {!! $map['js']!!}
         <!-- Styles -->
         <style>
             body {
@@ -123,12 +122,7 @@
                     <br>
                     <button type="button" class="button" >Search</button>
                 </div>
-                <br />
-                    <div id="frame">
-		                <div id="googleMap" >
-                          {!! $map['html']!!}
-                         </div>
-		            </div>      
+                <br />    
                 @include('layouts.partials.footer')
             </div>       
     </body>

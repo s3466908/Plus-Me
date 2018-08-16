@@ -11,8 +11,9 @@
 |
 */
 
-//HUH? google map route...
-Route::get('/', function () {
+//function Route to customise The Look of the Dashboard page google map API
+Route::get('/home', function () {
+
     $config['center'] = 'RMIT, Australia';
     $config['zoom'] = '18';
     $config['map_height'] = '1000px';
@@ -30,7 +31,12 @@ Route::get('/', function () {
 
     $map = GMaps::create_map();
 
-    return view('welcome')->with('map',$map);
+    return view('home')->with('map',$map);
+});
+
+//return Index (welcome) page 
+Route::get('/', function () {
+    return view('welcome');
 });
 
 //Authentication Routes 
@@ -38,7 +44,6 @@ Route::get('/user/activate/{token}', 'Auth\RegisterController@activateUser');
 Auth::routes();
 
 //Page Routes 
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/policy', 'PagesController@policy')->name('policy');
