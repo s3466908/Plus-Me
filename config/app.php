@@ -215,6 +215,9 @@ return [
         //alias for google maps api
         'GMaps' => FarhanWazir\GoogleMaps\Facades\GMapsFacade::class,
 
+
+        'Form' => collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
     ],
 
 ];

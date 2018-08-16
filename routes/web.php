@@ -48,3 +48,7 @@ Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 
 Route::get('/policy', 'PagesController@policy')->name('policy');
+
+
+//
+Route::resource('vehicles','VehiclesController');
