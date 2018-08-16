@@ -44,6 +44,7 @@ Route::get('/user/activate/{token}', 'Auth\RegisterController@activateUser');
 Auth::routes();
 
 //Page Routes 
+Route::get('/user/{id}', 'UserController@show')->name('user.show');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/policy', 'PagesController@policy')->name('policy');
