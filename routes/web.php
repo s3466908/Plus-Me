@@ -22,6 +22,7 @@ Route::get('/home', function () {
 
     GMaps::initialize($config);
     
+    
     // Add Marker
     $marker['position']= 'RMIT,Australia';
     $marker['infowindow_content']= 'RMIT University Melbourne,Australia';
@@ -45,6 +46,10 @@ Auth::routes();
 
 //Page Routes 
 Route::get('/user/{id}', 'UserController@show')->name('user.show');
+Route::get('/checkout', 'PagesController@checkout')->name('checkout');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/policy', 'PagesController@policy')->name('policy');
+
+//
+Route::post('profile', 'UserController@update_avatar');
