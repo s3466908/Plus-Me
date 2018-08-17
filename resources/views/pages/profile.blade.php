@@ -39,6 +39,8 @@
     <ul>Date of Birth: {{ $user -> date_of_birth }}</ul>
     <ul>Contact Number: {{ $user -> contact_number }}</ul>
     <ul>Email: {{ $user -> email }}</ul> 
+    
+    <a class="nav-link" href={{ route("cPassword")}}> Change Your Password </a>
     </div>
     
     <!-- Submit  form button for profile picture -->
