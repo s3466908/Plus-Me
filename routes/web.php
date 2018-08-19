@@ -51,5 +51,7 @@ Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/policy', 'PagesController@policy')->name('policy');
 
-//
+//route to change profile picture
 Route::post('profile', 'UserController@update_avatar');
+//route to process payment
+Route::get('/payment/process', 'PaymentsController@process')->name('payment.process');
