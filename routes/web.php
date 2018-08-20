@@ -23,8 +23,8 @@ Route::get('/home', function () {
 
     // initialize maps using these configs above
     GMaps::initialize($config);
-    
-    
+
+
     // Add Marker
     $marker['position']= 'RMIT,Australia';
     $marker['infowindow_content']= 'RMIT University Melbourne,Australia';
@@ -38,21 +38,30 @@ Route::get('/home', function () {
     return view('home')->with('map',$map);
 });
 
-//return Index (welcome) page 
+//return Index (welcome) page
 Route::get('/', function () {
     return view('welcome');
 });
 
-//Authentication Routes 
+//Authentication Routes
 Route::get('/user/activate/{token}', 'Auth\RegisterController@activateUser');
 Auth::routes();
 
-//Page Routes 
+//Page Routes
 Route::get('/user/{id}', 'UserController@show')->name('user.show');
 Route::get('/checkout', 'PagesController@checkout')->name('checkout');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/policy', 'PagesController@policy')->name('policy');
+Route::get('/admin', 'PagesController@admin')->name('admin');
+Route::get('/dashboard', 'PagesController@dashboard')->name('dashboard');
+Route::get('/profile', 'PagesController@profile')->name('profile');
+Route::get('/bookinghistory', 'PagesController@bookinghistory')->name('bookinghistory');
+Route::get('/messagebox', 'PagesController@messagebox')->name('messagebox');
+Route::get('/booking', 'PagesController@booking')->name('booking');
+Route::get('/booking/step2', 'PagesController@step2')->name('booking/step2');
+Route::get('/booking/step3', 'PagesController@step3')->name('booking/step3');
+Route::get('/booking/step4', 'PagesController@step4')->name('booking/step4');
 
 
 //
