@@ -22,5 +22,8 @@ class PagesController extends Controller
     public function policy(){
         return view('pages.policy');
     }
+    public function checkout(){
+        return view('pages.checkout');
+    }
 
 }

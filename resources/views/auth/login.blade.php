@@ -6,8 +6,19 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
+                <div class="card-body">     
+                  <!-- Display Session Status -->
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
+                    <!-- Begin Login Form -->
                     <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
                         @csrf
 
@@ -63,6 +74,7 @@
                             </div>
                         </div>
                     </form>
+                    <!-- end form -->
                 </div>
             </div>
         </div>

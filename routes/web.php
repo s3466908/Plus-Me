@@ -12,15 +12,18 @@
 */
 Route::get('/map', 'MapController@index');
 
-Route::get('/', function () {
+//function Route to customise The Look of the Dashboard page google map API
+Route::get('/home', function () {
+
     $config['center'] = 'RMIT, Australia';
     $config['zoom'] = '18';
-    $config['map_height'] = '500px';
+    $config['map_height'] = '1000px';
     //$config['map_width'] = '500px';
     $config['scrollwheel'] = false;
 
     // initialize maps using these configs above
     GMaps::initialize($config);
+    
     
     // Add Marker
     $marker['position']= 'RMIT,Australia';
@@ -32,23 +35,27 @@ Route::get('/', function () {
     // creating map using $map variable so its accessible anywhere
     $map = GMaps::create_map();
 
-    
-
-
-    // passing the map to the view
-    return view('welcome')->with('map',$map);
+    return view('home')->with('map',$map);
 });
 
+//return Index (welcome) page 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+//Authentication Routes 
+Route::get('/user/activate/{token}', 'Auth\RegisterController@activateUser');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
+//Page Routes 
+Route::get('/user/{id}', 'UserController@show')->name('user.show');
+Route::get('/checkout', 'PagesController@checkout')->name('checkout');
 Route::get('/about', 'PagesController@about')->name('about');
-
 Route::get('/faq', 'PagesController@faq')->name('faq');
-
 Route::get('/policy', 'PagesController@policy')->name('policy');
 
 
 //
 Route::resource('vehicles','VehiclesController');
+//
+Route::post('profile', 'UserController@update_avatar');
