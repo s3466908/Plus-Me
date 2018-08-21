@@ -50,7 +50,8 @@ Route::get('/checkout', 'PagesController@checkout')->name('checkout');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/policy', 'PagesController@policy')->name('policy');
-
+Route::get('/changePassword','HomeController@showChangePasswordForm');
+Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
 //route to change profile picture
 Route::post('profile', 'UserController@update_avatar');
 //route to process payment

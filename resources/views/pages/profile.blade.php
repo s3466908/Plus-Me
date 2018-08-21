@@ -40,7 +40,7 @@
     <ul>Contact Number: {{ $user -> contact_number }}</ul>
     <ul>Email: {{ $user -> email }}</ul> 
     </div>
-    
+    <a href="/changePassword"> Change Password</a>
     <!-- Submit  form button for profile picture -->
     <h2>Upload Profile Picture</h2>
     <form action="/profile" method="post" enctype="multipart/form-data">
