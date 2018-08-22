@@ -49,7 +49,6 @@ Auth::routes();
 
 //Page Routes
 Route::get('/user/{id}', 'UserController@show')->name('user.show');
-Route::get('/checkout', 'PagesController@checkout')->name('checkout');
 Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/faq', 'PagesController@faq')->name('faq');
 Route::get('/policy', 'PagesController@policy')->name('policy');
@@ -61,8 +60,8 @@ Route::get('/messagebox', 'PagesController@messagebox')->name('messagebox');
 Route::get('/booking', 'PagesController@booking')->name('booking');
 Route::get('/booking/step2', 'PagesController@step2')->name('booking/step2');
 Route::get('/booking/step3', 'PagesController@step3')->name('booking/step3');
-Route::get('/booking/step4', 'PagesController@step4')->name('booking/step4');
-
+Route::get('/booking/step3/checkout', 'PagesController@checkout')->name('checkout');
+Route::get('/booking/step3/checkout/payment/process', 'PaymentsController@process')->name('payment.process');
 
 //
 Route::resource('vehicles','VehiclesController');

@@ -13,7 +13,7 @@
     <div>
         This is the Dashboard side bar as per wireframe
         <a class="nav-link" href="{{ route('user.show', Auth::user()->id) }}">Profile</a>
-        <a class="nav-link" href="{{ route('checkout')}}">BOOK!</a>
+        <a class="nav-link" href="{{ route('booking/step2')}}">BOOK!</a>
   </div>
 </div>
 @endsection

@@ -72,6 +72,8 @@
         </div>
     </div>
     <br >
-    @include('layouts.partials.footer');
+    <div class="row">
+    @include('layouts.partials.footer')
+    </div>
 </div>
 @endsection

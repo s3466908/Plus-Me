@@ -2,20 +2,20 @@
 
 @section('content')
 <div class="container">
-    <div class="form-group row">
-            <div class="pickup-location-same">
-                <label>Pickup Location</label>
-                <input class="form-control ondemand-typeahead" type="text" placeholder="Search by suburb, postcode, city, region..." data-provide="typeahead" autocomplete="on" value="" name="location" style="padding: 10px; margin: 10px; width: 300px;" />
+    <div class="col form-group ">
+    <br>
+        <h1>Comfirm your Booking </h1>
+            <div class="row pickup-location-same">
+                <label>Pickup Location: </label>
+                <p> Output </p>
             </div>
-            <div class="pickup-date-same">
-                <label>Pickup Date</label>
-                <input type="hidden" value="" />
-                <input class="form-control ondemand-typeahead" type="date"  data-provide="typeahead" autocomplete="on" value="" name="pickupdate" style="padding: 10px; margin: 10px; width: 200px;" />
+            <div class="row pickup-date-same">
+                <label>Pickup Date: </label>
+                <p> Output </p>
             </div>
-            <div class="return-date-same">
-                <label>Return Date</label>
-                <input type="hidden" value="" />
-                <input class="form-control ondemand-typeahead" type="date" data-provide="typeahead" autocomplete="on" value="" name="returndate" style="padding: 10px; margin: 10px; width: 200px;" />
+            <div class="row return-date-same">
+                <label>Return Date: </label>
+                <p> Output </p>
             </div>
             <a href="{{ route('booking') }}" class="btn btn-primary" style="height: 40px;">Edit</a>
     </div>
@@ -23,7 +23,7 @@
             <h5 class="card-header">car type</h5>
             <div class="card-body">
               <h5 class="card-title">$5 / hour</h5>
-              <p class="card-text">akljsdkjkjnamn mksad asdk</p>
+              <p class="card-text">Chosen Car Output</p>
               <a href="{{ route('booking/step2') }}" class="btn btn-primary">Edit</a>
             </div>
           </div>
@@ -35,14 +35,8 @@
         </div>
     </div>
     <br >
-
-    {{-- <form method="POST" action="{{ route('booking/step4') }}">
-            <div class="form-group row">
-
-            </div>
-    </form> --}}
     <!-- end form -->
-        <a href="{{ route('booking/step4') }}" class="btn btn-primary">Checkout</a>
+        <a href="{{ route('checkout') }}" class="btn btn-primary">Checkout</a>
 
     @include('layouts.partials.footer');
 </div>

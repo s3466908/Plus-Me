@@ -47,8 +47,8 @@ class PagesController extends Controller
         return view('booking.step3');
     }
 
-    public function step4(){
-        return view('booking.step4');
+    public function checkout(){
+        return view('booking.checkout');
     }
 
     public function dashboard(){
